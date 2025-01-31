@@ -45,3 +45,5 @@ if cytaty_od_0 != "nie":
         nazwa_dziennika = input("Wprowadz inna, poprawna nazwe dziennika ")
         with open (str(nazwa_dziennika)+'.txt', 'w') as plik:
             plik.write(f"{datetime.now()} - {cytaty_od_0}")
+
+# sprawdzam commitowanie
