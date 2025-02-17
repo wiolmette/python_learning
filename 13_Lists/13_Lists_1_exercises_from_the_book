@@ -1,0 +1,91 @@
+# 1. What is []?
+# This is a square bracket that indicates the beginning and end of a list data type.
+
+# 2. How would you assign the value 'hello' as the third value in a list stored in a variable named spam?
+# (Assume spam contains [2, 4, 6, 8, 10].)
+# spam[2] = "hello"
+
+spam = [2, 4, 6, 8, 10]
+print(spam)
+spam[2] = "hello"
+print(spam)
+
+# 3. What does spam[int(int('3' * 2) // 11)] evaluate to
+# spam[0] ? NIEEE
+# print(int('3' * 2)) = 33 bo 2x string 3 !!!
+# 33 / 11 = 3 -> spam[3] = 8
+
+print(spam[int(int('3' * 2) // 11)])
+print(int('3' * 2))
+
+# 4. What does spam[-1] evaluate to?
+# It evaluates to the last element of the list
+
+print(spam[-1])
+
+# 5. What does spam[:2] evaluate to?
+# spam[:2] = spam[0, 2] -> the first and the second element of the list
+
+print(spam[:2])
+
+# For the following three questions, let’s say bacon contains the list [3.14, 'cat', 11, 'cat', True].
+bacon = [3.14, 'cat', 11, 'cat', True]
+
+# 6. What does bacon.index('cat') evaluate to?
+# 1
+
+print(bacon.index('cat'))
+
+# 7. What does bacon.append(99) make the list value in bacon look like?
+# [3.14, 'cat', 11, 'cat', True, 99]
+
+bacon.append(99)
+print(bacon)
+
+# 8. What does bacon.remove('cat') make the list value in bacon look like?
+# [3.14, 11, 'cat', True]
+bacon.remove('cat')
+print(bacon)
+
+# 9. What are the operators for list concatenation and list replication?
+# bacon + bacon
+print(bacon + bacon)
+# bacon * 3
+print(bacon*3)
+
+# 10. What is the difference between the append() and insert() list methods?
+# append - adds an element to the end of the list
+bacon.append("cow")
+print(bacon)
+# insert - can add the value at any index of the list
+bacon.insert(1, "dog")
+print(bacon)
+
+# 11. What are two ways to remove values from a list?
+# del bacon[0] or bacon.remove("cow")
+del bacon[0]
+bacon.remove("cow")
+print(bacon)
+
+# 12. Name a few ways that list values are similar to string values.
+# Both are sequence data type and are mutable
+
+# 13. What is the difference between lists and tuples?
+# Lists are mutable and tuples are immutable
+
+# 14. How do you type the tuple value that has just the integer value 42 in it? 
+tuple = (42)
+print(tuple)
+
+# 15. How can you get the tuple form of a list value? How can you get the list form of a tuple value?
+# tuple(['cat', 'dog', 5]) -> ('cat', 'dog', 5) 
+# list(('cat', 'dog', 5)) -> ['cat', 'dog', 5] 
+
+# 16. Variables that “contain” list values don’t actually contain lists directly. What do they contain instead?
+# References to the lists
+
+# 17. What is the difference between copy.copy() and copy.deepcopy()?
+# copy() can be used to make a duplicate copy of a mutable value like a list or
+# dictionary, not just a copy of a reference
+# If the list you need to copy contains lists, then we use the copy.deepcopy() function instead of copy.copy(). 
+# The deepcopy() function will copy these inner lists as well
