@@ -1,20 +1,9 @@
-# Zad. 5 Słownik kontaktów (CRUD)
-# Zbuduj prosty system zarządzania kontaktami, przechowujący dane w słowniku:
-
 contacts = {
     "Jan Kowalski": {"phone": "123123123", "email": "jan@example.com"},
     "Anna Nowak": {"phone": "987987987", "email": "anna@example.com"}
 }
 
-# 1. Zaimplementuj w funkcji manage_contacts() lub w osobnym module:
-# Create: Dodawanie nowego kontaktu (zapytaj o imię, nazwisko, telefon, e-mail).
-# Read: Wyświetlanie danych wybranego kontaktu.
-# Update: Aktualizacja istniejącego kontaktu (np. zmiana telefonu).
-# Delete: Usunięcie kontaktu po imieniu i nazwisku.
-
-# kolor = input("podaj kolor buraka ")
-# burak = {"burak": kolor}
-# print(burak)
+# ------------------------------------   
 
 def create():
     imie = input("Imie kontaktu: ")
@@ -31,8 +20,6 @@ def create():
     contacts[imie_nazwisko] = telefon1, email1
     print(contacts)
 
-create()
-
 # ------------------------------------
 
 def read():
@@ -44,18 +31,15 @@ def read():
         except KeyError:
             print("Podano bledna nazwe kontaktu")
 
-
-read()
-
 # ------------------------------------
 
 def update():
     while True:
         kontakt2 = input("Wprowadz imie i nazwisko kontaktu, ktory chcesz zaktualizowac: ")   
-        if kontakt2 not in ["Jan Kowalski", "Anna Nowak", imie_nazwisko]:
+        if kontakt2 not in contacts.keys():
             print("Podano bledna nazwe kontaktu")
 
-        elif kontakt2 in ["Jan Kowalski", "Anna Nowak", imie_nazwisko]:
+        elif kontakt2 in contacts.keys():
             while True:
                 wybor_opcji = input("Podaj dane do zaktualizowania? 1 - telefon, 2 - email, 3 - telefon i email. Napisz '1', '2' lub '3'. ")
                 if wybor_opcji not in ["1", "2", "3"]:
@@ -84,10 +68,6 @@ def update():
                     print(contacts)
                     return
 
-update()
-
-# ROBIAC FUNKCJE GLOWNA ZROBIC PORZADEK ZE ZMIENNYMI LOK/GLOB!
-
 # ------------------------------------
 
 def delete():
@@ -100,7 +80,20 @@ def delete():
             print("Podano bledna nazwe kontaktu")
     print(contacts)
 
-delete()
+# ------------------------------------
 
-
-
+def manage_contacts():
+    while True:
+        opcja = input("Wybierz co chcesz zrobic ze swoja lista kontaktow: 1 - utworz nowy, 2 - wyswietl kontakt, 3 - zaktualizuj kontakt, 4 - usun kontakt. Jesli chcesz wyjsc z managera kontaktow, napisz '5'. ")
+        if opcja == "1":
+            create()
+        if opcja == "2":
+            read()
+        if opcja == "3":
+            update()
+        if opcja == "4":
+            delete()
+        if opcja == "5":
+            break
+            
+manage_contacts()

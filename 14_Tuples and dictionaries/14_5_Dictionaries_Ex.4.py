@@ -34,3 +34,6 @@ for i in range(0, len(student_names)):
     slownik[student_names[i]] = slownik2, slownik3
 print(slownik)
 
+# print(slownik.keys())
+# print(slownik2.keys())
+# print(slownik3.keys())
