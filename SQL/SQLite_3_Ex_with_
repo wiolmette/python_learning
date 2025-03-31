@@ -1,0 +1,33 @@
+import sqlite3
+conn = sqlite3.connect('baza.db')
+cursor = conn.cursor()
+
+# Ex. 6 Znajdź wszystkie utwory o długości powyżej 5 minut (uwaga: czas jest w milisekundach).
+
+cursor.execute("SELECT * FROM tracks WHERE Milliseconds>(5*60*1000);")
+results6 = cursor.fetchall()
+for row in results6:
+    print(row)
+
+# Ex. 7 Pokaż klientów mieszkających w Kanadzie (Country = 'Canada').
+
+cursor.execute("SELECT * FROM customers WHERE Country = 'Canada';")
+results7 = cursor.fetchall()
+for row in results7:
+    print(row)
+
+# Ex. 8 Wyświetl listę pracowników urodzonych po 1970 roku, 
+# posortowanych malejąco po dacie urodzenia.
+
+cursor.execute("SELECT * FROM employees WHERE BirthDate>'1970-01-01' ORDER BY BirthDate DESC;") 
+# trzeba dokladnie zapisac date a nie np. tylko rok i w apostrofach aby nie wykonalo sie dzialanie matematyczne!
+# Sortowanie odbywa sie po pelnej dacie i godzinie!
+results8 = cursor.fetchall()
+for row in results8:
+    print(row)
+
+# Ex. 9 Pokaż 5 najdroższych utworów
+cursor.execute("SELECT * FROM tracks ORDER BY UnitPrice DESC LIMIT 5;")
+results9 = cursor.fetchall()
+for row in results9:
+    print(row)
