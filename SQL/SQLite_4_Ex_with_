@@ -1,0 +1,45 @@
+import sqlite3
+conn = sqlite3.connect('baza.db')
+cursor = conn.cursor()
+
+# 10. Wyświetl listę utworów z nazwą albumu, z którego pochodzą.
+cursor.execute("SELECT albums.Title, tracks.Name FROM tracks JOIN albums ON tracks.AlbumId = albums.AlbumId;")
+# SELECT tabela.kolumna
+# FROM glowna_tabela
+# JOIN drugorzedna_tabela 
+# ON glowna_tabela.kolumna = drugorzedna_tabela.kolumna (warunek)
+results10 = cursor.fetchall()
+for row in results10:
+    print(row)
+
+# 11. Pokaż listę albumów wraz z nazwą wykonawcy.
+cursor.execute("SELECT artists.Name, albums.Title FROM albums JOIN artists ON albums.ArtistId = artists.ArtistId;")
+results11 = cursor.fetchall()
+for row in results11:
+    print(row)
+
+# 12. Dla każdego utworu pokaż jego tytuł, gatunek (Genre) oraz typ nośnika (MediaType).
+cursor.execute("""SELECT tracks.Name, genres.Name, media_types.Name FROM tracks 
+JOIN genres ON tracks.GenreId = genres.GenreId
+JOIN media_types ON tracks.MediaTypeId = media_types.MediaTypeId;""")
+
+results12 = cursor.fetchall()
+for row in results12:
+    print(row)
+
+# 13. Wyświetl listę faktur (invoices) razem z imieniem i nazwiskiem klienta, który ją otrzymał.
+cursor.execute("""SELECT invoices.*, customers.FirstName, customers.LastName FROM invoices 
+JOIN customers ON invoices.CustomerId = customers.CustomerId""")
+
+results13 = cursor.fetchall()
+for row in results13:
+    print(row)
+
+# 14. Znajdź wszystkie utwory z playlisty o PlaylistId = 1 i wyświetl ich nazwy.
+cursor.execute("""SELECT playlist_track.PlaylistId, tracks.Name FROM playlist_track 
+JOIN tracks ON playlist_track.TrackId = tracks.TrackId
+WHERE playlist_track.PlaylistId = 1;""")
+
+results14 = cursor.fetchall()
+for row in results14:
+    print(row)
