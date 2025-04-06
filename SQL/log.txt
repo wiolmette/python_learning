@@ -1,0 +1,125 @@
+📅 Log uruchomienia: 2025-04-05 06:01:13.368743
+
+✔ 2023\11.05.23_rowery_do_Gdyni.jpeg → 4:3
+✔ 2023\27.11.23_zyczenia_dla_Endriu.jpg → 3:4
+✔ 2023\28.01.23_pierwszy_spacer_nad_morzem (2).jpg → 4:3
+✔ 2023\28.01.23_pierwszy_spacer_nad_morzem.JPG → 3:2
+✔ 2023\Amsterdam (czerwiec 2023).jpeg → 4:3
+✔ 2023\Ams_Deribit (lipiec 2023) (1).jpg → 4:3
+✔ 2023\Ams_Deribit (lipiec 2023).jpeg → 3:4
+✔ 2023\Andrzejki (listopad 2023).jpeg → 2:3
+✔ 2023\Baczens seksiak z grzybkiem w Ustce (pazdziernik 23).jpg → 3:4
+✔ 2023\Baczens zgwalcony i porzucony (wrzesien 2023).jpg → 3:4
+✔ 2023\Gotowanie (lipiec 2023).jpg → 4:3
+✔ 2023\Islandia (czerwiec 2023) (2).jpg → 4:3
+✔ 2023\Islandia (czerwiec 2023).jpeg → 4:3
+✔ 2023\Islandia (czerwiec 2023).jpg → 4:3
+✔ 2023\Kwas (2023).jpg → 3:4
+✔ 2023\Madera (1).JPG → 3:2
+✔ 2023\Madera (4).JPG → 2:3
+✔ 2023\Madera (5).JPG → 3:2
+✔ 2023\Madera (6).jpg → 3:4
+✔ 2023\Madera (pazdziernik 2023) (2).jpg → 4:3
+✔ 2023\Madera (pazdziernik 2023).jpg → 4:3
+✔ 2023\Madera (październik 2023) (2).jpg → 3:4
+✔ 2023\Madera (październik 2023).jpeg → 4:3
+✔ 2023\Madera (październik 2023).jpg → 3:2
+✔ 2023\Maseczki (grudzien 2023).jpg → 4:3
+✔ 2023\Maseczki (grudzień 2023 chyba).jpg → 3:4
+✔ 2023\Opalanko na balkonie (wrzesien 23).jpg → 4:3
+✔ 2023\Przed barbie (lipiec 2023).jpg → 2:3
+✔ 2023\Sozopol 2.jpg → 4:3
+✔ 2023\Sozpol (wrzesień 2023) (1).jpg → 3:4
+✔ 2023\Sozpol (wrzesień 2023).jpg → 4:3
+✔ 2023\Swiateczne_uro_Patki (grudzien 2023).jpeg → 2:3
+✔ 2023\Umiejetnosci fotograficzne Konrada (grudzien 2023).jpg → 3:4
+✔ 2023\Uro Wioli Andrzejkowe (listopad 2023).jpg → 3:4
+✔ 2023\Woodstock 2023.jpg → 4:3
+✔ 2023\Wwa z Emilia i Baczensem (05.06.23).jpg → 4:3
+✔ 2023\Świątecznie (grudzień 2023).jpg → 3:4
+✔ 2024\06.03.24_kula_kadzidelko_Baczens.JPG → 3:4
+✔ 2024\12.12.24_swiateczny_park_Oliwski.jpg → 4:3
+✔ 2024\13.01.24_spacer_zimowy_Baczens (2).jpg → 4:3
+✔ 2024\13.01.24_spacer_zimowy_Baczens.JPG → 2:3
+✔ 2024\Baczens i Dupens skrzydlaci (pazdziernik 2024).jpg → 3:4
+✔ 2024\Baczens i Dzyrta (pazdziernik 2024).jpg → 4:3
+✔ 2024\Baczes łakomczuszek (styczen 2024).jpg → 4:3
+✔ 2024\Bańki (listopad 2024).jpg → 3:4
+✔ 2024\Choruszek Dupens (pazdziernik 2024).jpg → 3:4
+✔ 2024\Girl dinner (2024).jpg → 3:4
+✔ 2024\Grill Park Reagana_Baczens (13.04.24).jpg → 2:3
+✔ 2024\Grill w PR (2024).jpeg → 3:4
+✔ 2024\Grill w PR (chyba kwiecień 2024).jpeg → 3:4
+✔ 2024\Hel (czerwiec 2024) (1).jpg → 3:4
+✔ 2024\Hel (czerwiec 2024) (2).jpg → 4:3
+✔ 2024\Hel (czerwiec 2024) (3).jpg → 4:3
+✔ 2024\Hel (czerwiec 2024) (4).jpg → 3:4
+✔ 2024\Hel (czerwiec 2024) (5).jpg → 3:4
+✔ 2024\Hel (czerwiec 2024) (6).jpg → 3:4
+✔ 2024\Hel (czerwiec 2024).jpg → 2:3
+✔ 2024\Huśtawka na plaży (lato 2024) (1).jpg → 4:3
+✔ 2024\Huśtawka na plaży (lato 2024) (2).jpg → 4:3
+✔ 2024\Impreza lata jakieś tam (chyba lipiec 2024).jpeg → 3:4
+✔ 2024\Jakaś impreza (lato 2024).jpeg → 3:4
+✔ 2024\Jeziorko (po Łomnicy, maj 2024).jpg → 4:3
+✔ 2024\Kajaki majówka (maj 2024).jpeg → 4:3
+✔ 2024\Kwas (2).jpg → 3:4
+✔ 2024\Kwas (2024).jpg → 3:4
+✔ 2024\Kwas - faza jesienna (listopad 2024).jpg → 4:3
+✔ 2024\Kwas.jpg → 4:3
+✔ 2024\Lato 2024 (2).jpg → 4:3
+✔ 2024\Lato 2024.jpg → 2:3
+✔ 2024\Los Muertos, dupens mejkap (listopad 2024).jpg → 3:4
+✔ 2024\Madera (pazdziernik 2023).jpeg → 3:4
+✔ 2024\Majówka (maj 2024).jpg → 3:4
+✔ 2024\Majówka, kajaczki (maj 2024).jpg → 3:4
+✔ 2024\Molo Brzeźno (2024).jpg → 4:3
+✔ 2024\Najlepsza jesień Dupensa (pazdziernik 2024).jpg → 4:3
+✔ 2024\Orlowo (luty 2024).jpg → 4:3
+✔ 2024\Park Reagana z Dela (2024).jpg → 3:4
+✔ 2024\Piknik na plazy (kwiecien 24).jpg → 4:3
+✔ 2024\Port Fromage (2024).jpg → 3:2
+✔ 2024\Powrot z Wro, porobieni xd (luty 2024).jpg → 3:4
+✔ 2024\Poznań Rojek (kwiecień 2024).jpg → 3:4
+✔ 2024\PRL (listopad 2024).jpg → 3:4
+✔ 2024\Przyjazd chłopaków z Wałbrzycha (lato 2024) (1).jpeg → 3:4
+✔ 2024\Przyjazd chłopaków z Wałbrzycha (lato 2024).jpeg → 4:3
+✔ 2024\Przyjazd chłopaków z Wch (lato 2024) (1).jpeg → 3:4
+✔ 2024\Przyjazd ekipy Alanowej (lato 2024).jpeg → 4:3
+✔ 2024\Przyjazd rodziców do Gdańska (kwiecień 2024).jpg → 3:4
+✔ 2024\Sweterkowi (grudzien 2024).jpg → 4:3
+✔ 2024\Uro Bączensa (wrzesień 2024).jpg → 3:4
+✔ 2024\Ustka_sierpien_2024 (1).jpeg → 3:4
+✔ 2024\Ustka_sierpien_2024 (2).jpeg → 3:4
+✔ 2024\Ustka_sierpien_2024 (3).jpeg → 3:4
+✔ 2024\Waluś koncert (listopad 2024).jpg → 4:3
+✔ 2024\Wars, powrót z Wro (wrzesień 2024).jpg → 3:4
+✔ 2024\Wesele Waldka (kwiecień 2024) (1).jpeg → 3:4
+✔ 2024\Wesele Waldka (kwiecień 2024) (2).jpeg → 4:3
+✔ 2024\Wieżyca (zima 2024).jpeg → 4:3
+✔ 2024\Woodstock 2024.jpg → 3:4
+✔ 2024\Wwa_SnL_Palac_nocne (pazdziernik 2024).jpg → 4:3
+✔ 2024\Wwa_SnL_Łazienki_retro (pazdziernik 2024).jpg → 3:2
+✔ 2024\Wycieczka z rodzicami (chyba kwiecień 2024).jpeg → 4:3
+✔ 2024\Wyjazd zimowy z rodzicami, u Macka (styczen 2024).jpg → 4:3
+✔ 2024\Z Kamilem i Natka, Olivia Star restauracja (luty 2024).jpg → 4:3
+✔ 2024\Łomnica (maj 2024) (1).JPG → 3:2
+✔ 2024\Łomnica (maj 2024) (2).JPG → 3:2
+✔ 2024\Łóżeczkensy (2024).jpg → 3:2
+✔ 2025\23.03.25_Torpedownia_Baczens_choruszek_w_czapuszce.JPG → 2:3
+✔ 2025\Basen (2025).jpg → 3:4
+✔ 2025\Białka Tatrzańska (styczeń 2025).jpg → 4:3
+✔ 2025\Egipt (grudzien 2024 i styczen 2025) (1).jpg → 3:4
+✔ 2025\Egipt (grudzien 2024 i styczen 2025) (2).jpg → 3:4
+✔ 2025\Egipt (grudzien 2024 i styczen 2025) (3).jpg → 4:3
+✔ 2025\Egipt (grudzien 2024 i styczen 2025) (4).jpg → 3:4
+✔ 2025\Egipt (grudzien 2024 i styczen 2025) (5).jpeg → 4:3
+✔ 2025\Egipt_2024-2025 (1).jpg → 4:3
+✔ 2025\Egipt_2024-2025 (2).jpg → 4:3
+✔ 2025\Egipt_2024-2025 (3).jpg → 3:4
+✔ 2025\Flyspot (luty 2025).jpg → 4:3
+✔ 2025\Przyjazd chłopaków z Wałbrzycha (marzec 2025).jpeg → 4:3
+✔ 2025\Walentynki (luty 2025) (2).jpg → 3:4
+✔ 2025\Walentynki (luty 2025).jpg → 3:4
+
+✔ Przetworzono: 121 | ❌ Błędy: 0
