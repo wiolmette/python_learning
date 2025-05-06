@@ -44,29 +44,41 @@ for i in range(0, len(results15)):
     # print(results17)
     print("Number of clients from", country, "is", len(results17))
 
+# z uzyciem COUNT:
+cursor.execute("""
+    SELECT Country, COUNT(*) 
+    FROM customers 
+    GROUP BY Country;
+""")
+results18 = cursor.fetchall()
+print(results18)
+
 
 # 16. Policz ile utworów znajduje się w każdym gatunku (Genre).
-cursor.execute("SELECT COUNT(tracks.GenreId) FROM tracks JOIN genres ON tracks.GenreId = genres.GenreId;")
+cursor.execute("SELECT GenreId, COUNT(*) FROM tracks GROUP BY GenreId")
 results19 = cursor.fetchall()
 print(results19)
 for row in results19:
     print(row)
 
 
-
-#print(type(results19))
-#print(results19[0])
-
-
-
-
-#     cursor.execute("SELECT CustomerId FROM customers WHERE Country=?;", (country,))
-#     results17 = cursor.fetchall()
-#     # print(results17)
-#     print("Number of clients from", country, "is", len(results17))
-
 # 17. Oblicz średnią cenę utworu.
+cursor.execute("SELECT AVG(UnitPrice) FROM tracks")
+results20 = cursor.fetchall()
+print(results20)
+
 
 # 18. Znajdź 3 gatunki z największą liczbą utworów.
+print(type(results19))
+print(results19[0][1])
+print(len(results19))
+liczba_utworow_lista = []
+for i in range(0, len(results19)):
+    liczba_utworow = results19[i][1]
+    liczba_utworow_lista.append(liczba_utworow)
+print(liczba_utworow_lista)
+liczba_utworow_najwiecej = sorted(liczba_utworow_lista, reverse=True)
+print(liczba_utworow_najwiecej)
+    
 
 # 19. Policz łączną długość (w sekundach) wszystkich utworów w bazie.
