@@ -129,3 +129,7 @@ results22 = cursor.fetchall()
 print(results22)
 
 # 19. Policz łączną długość (w sekundach) wszystkich utworów w bazie.
+cursor.execute("SELECT SUM(Milliseconds) FROM tracks")
+results23 = cursor.fetchall()
+laczy_czas_w_sekundach = results23[0][0]/1000
+print(laczy_czas_w_sekundach)
