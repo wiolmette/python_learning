@@ -79,6 +79,53 @@ for i in range(0, len(results19)):
 print(liczba_utworow_lista)
 liczba_utworow_najwiecej = sorted(liczba_utworow_lista, reverse=True)
 print(liczba_utworow_najwiecej)
-    
+
+#trzy_najliczniejsze_gatunki = 
+for element in results19: 
+    if element[1] == liczba_utworow_najwiecej[0]:
+        pierwszy = element[0]
+    if element[1] == liczba_utworow_najwiecej[1]:
+        drugi = element[0]
+    if element[1] == liczba_utworow_najwiecej[2]:
+        trzeci = element[0]
+print("Najliczniejsze gatunki to te o GenreId:", pierwszy,",", drugi,",", trzeci,".")
+
+# lepiej Pythonowo
+# sorted(lista, key=co_ma_byc_podstawa_sortowania, reverse=True/False)      !!!
+# lamdba x: x[1] to to samo co:                                             !!!
+# def f(x):                                                                 !!!
+#    return x[1]                                                            !!!
+
+posortowane = sorted(results19, key = lambda x: x[1], reverse=True)
+# key = lambda x: x[1] - sortuje po drugim elemencie listy                  !!!
+# reverse=True - malejaco                                                   !!!
+
+trzynajwieksze = posortowane[:3]
+
+print(trzynajwieksze)
+
+# SQL-owo
+cursor.execute("""SELECT genres.Name, COUNT(tracks.GenreId) AS liczba_piosenek
+               FROM tracks 
+               JOIN genres 
+               ON tracks.GenreId = genres.GenreId
+               GROUP BY genres.Name
+               ORDER BY liczba_piosenek DESC
+               LIMIT 3""")
+
+results21 = cursor.fetchall()
+print(results21)
+
+# 18* (Dodane) Znajdź 5 artystów, którzy mają najwięcej albumów.
+cursor.execute("""SELECT artists.Name, COUNT(albums.ArtistId) AS liczba_albumow
+               FROM albums 
+               JOIN artists 
+               ON artists.ArtistId = albums.ArtistId
+               GROUP BY artists.Name
+               ORDER BY liczba_albumow DESC
+               LIMIT 3""")
+
+results22 = cursor.fetchall()
+print(results22)
 
 # 19. Policz łączną długość (w sekundach) wszystkich utworów w bazie.
