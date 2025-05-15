@@ -68,8 +68,32 @@ cursor.execute("""SELECT playlists.Name, COUNT(*) AS liczba_utworow
 results7 = cursor.fetchall()
 print(results7)
 
-# 8. Dla każdego klienta policz, ile faktur wystawiono i jaka była ich łączna wartość. Pokaż tylko klientów z co najmniej 2 fakturami.
+# 8. Dla każdego klienta policz, ile faktur wystawiono i jaka była ich łączna wartość. 
+# Pokaż tylko klientów z co najmniej 2 fakturami.
+cursor.execute("""SELECT customers.FirstName, customers.LastName, 
+               COUNT(*) AS liczba_faktur, 
+               SUM(Total)
+               FROM invoices
+               JOIN customers ON customers.CustomerId = invoices.CustomerId
+               GROUP BY customers.CustomerId
+               HAVING COUNT(*) >= 2
+               ORDER BY liczba_faktur""")
+results8 = cursor.fetchall()
+print(results8)
 
 # 9. Dla każdego kraju policz średnią wartość jednej faktury (AVG(Total)). Posortuj od najwyższej.
+cursor.execute("""SELECT invoices.BillingCountry, AVG(Total) AS srednia_faktura
+               FROM invoices
+               GROUP BY BillingCountry
+               ORDER BY srednia_faktura DESC""")
+results9 = cursor.fetchall()
+print(results9)
 
-# 10. Pokaż najdłuższy utwór w każdym gatunku (czyli MAX(Milliseconds) pogrupowane po Genre).
+# 10. Pokaż najdłuższy utwór w każdym gatunku.
+cursor.execute("""SELECT genres.Name, tracks.Name,
+               MAX(Milliseconds)
+               FROM tracks
+               JOIN genres ON genres.GenreId = tracks.GenreId
+               GROUP BY genres.Name""")
+results10 = cursor.fetchall()
+print(results10)
