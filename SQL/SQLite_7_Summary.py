@@ -40,10 +40,33 @@ results4 = cursor.fetchall()
 print(results4)
 
 # 5. Pokaż 5 gatunków z najkrótszą łączną długością utworów (czyli SUM(Milliseconds)).
+cursor.execute("""SELECT genres.Name, SUM(Milliseconds) AS laczna_dlugosc
+               FROM tracks
+               JOIN genres ON genres.GenreId = tracks.GenreId
+               GROUP BY genres.Name
+               ORDER BY laczna_dlugosc ASC
+               LIMIT 5""")
+results5 = cursor.fetchall()
+print(results5)
 
 # 6. Wyświetl artystów, którzy mają więcej niż 3 albumy.
+cursor.execute("""SELECT artists.Name, COUNT(*) AS liczba_albumow
+               FROM albums
+               JOIN artists ON albums.ArtistId = artists.ArtistId
+               GROUP BY albums.ArtistId
+               HAVING COUNT(*) > 3
+               ORDER BY liczba_albumow ASC""")
+results6 = cursor.fetchall()
+print(results6)
 
 # 7. Policz, ile utworów jest powiązanych z każdą playlistą i posortuj wyniki malejąco.
+cursor.execute("""SELECT playlists.Name, COUNT(*) AS liczba_utworow
+               FROM playlist_track
+               JOIN playlists ON playlists.PlaylistId = playlist_track.PlaylistId
+               GROUP BY playlist_track.PlaylistId
+               ORDER BY liczba_utworow DESC""")
+results7 = cursor.fetchall()
+print(results7)
 
 # 8. Dla każdego klienta policz, ile faktur wystawiono i jaka była ich łączna wartość. Pokaż tylko klientów z co najmniej 2 fakturami.
 
