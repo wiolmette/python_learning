@@ -90,10 +90,16 @@ results9 = cursor.fetchall()
 print(results9)
 
 # 10. Pokaż najdłuższy utwór w każdym gatunku.
-cursor.execute("""SELECT genres.Name, tracks.Name,
-               MAX(Milliseconds)
+cursor.execute("""
+               SELECT genres.Name, tracks.Name, tracks.Milliseconds
                FROM tracks
                JOIN genres ON genres.GenreId = tracks.GenreId
-               GROUP BY genres.Name""")
+               JOIN(SELECT GenreId,
+               MAX(Milliseconds) AS maks
+               FROM tracks
+               GROUP BY GenreId)
+               AS maksima ON maksima.GenreId = tracks.GenreId
+               AND maksima.maks = tracks.Milliseconds
+               """)
 results10 = cursor.fetchall()
 print(results10)
