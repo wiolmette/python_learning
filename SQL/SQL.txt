@@ -1,0 +1,141 @@
+---------------------------- PRACA NA WARTOŚCIACH Z TABELI ----------------------------
+
+slowa sa case-insensitive tzn. wielkosc liter nie ma znaczenia
+; - dla oddzielenia polecen
+""" ... """ - gdy chce poszczegolne polecenia zapisywac w odrebnych linijkach
+
+SELECT [1. kolumna], [2. kolumna] FROM [tabela] <- przecinek ważny!
+
+SELECT DISTINCT - wybiera tylko pierwszą wartość jeśli się powtarzają
+
+WHERE [warunek, np. Country='Brazil'] <- apostrofy a nie cudzysłowia!
+
+ORDER BY [1. kolumna], [2. kolumna] DESC/ASC <- jeśli nie napiszę DESC/ASC to automatycznie ASC; na końcu
+
+LIMIT ... - liczba wierszy, np. LIMIT 3
+
+LIKE 'G%' - zamiast =, <, > mozna uzyc i oznacza ze cos zaczyna sie na litere G
+'%G' - konczy sie na G
+'%G%' - w srodku jest G
+'_G%' - 2. litera jest G
+% - dowolna liczba dowolnych znaków
+_ - dokładnie jeden dowolny znak
+
+AND, OR
+
+NULL - brak wartości
+np. Country IS NULL
+Country IS NOT NULL
+
+NOT
+WHERE NOT np. City='Berlin'
+... NOT LIKE ...
+... NOT IN ...
+
+BETWEEN 10 AND 50 - z wartosciami ekstremalnymi
+IN (10, 50) - zbiór składający się z 10 i 50, nie przedział!
+
+--- COUNT ---
+COUNT(*) - Liczy wszystkie wiersze, nawet jeśli zawierają NULL w innych kolumnach.
+SELECT COUNT(*) FROM customers; - Policz wszystkich klientów, bez względu na to, czy mają wpisane dane.
+
+COUNT(kolumna) - Liczy tylko wiersze, gdzie ta kolumna nie jest NULL.
+SELECT COUNT(Phone) FROM customers; - Policz tylko klientów, którzy mają wpisany numer telefonu (pomija tych z NULL w Phone).
+
+COUNT(DISTINCT kolumna) - Liczy tylko unikalne, niepowtarzające się wartości w danej kolumnie.
+SELECT COUNT(DISTINCT Country) FROM customers; - Policz, z ilu różnych krajów pochodzą klienci (każdy kraj tylko raz).
+
+COUNT(*) ... GROUP BY kolumna - Liczy wszystkie wiersze, ale osobno dla każdej grupy (np. dla każdego kraju).
+SELECT Country, COUNT(*) FROM customers GROUP BY Country; - Policz, ilu klientów pochodzi z każdego kraju.
+
+COUNT(*) ... WHERE ... - Liczy tylko te wiersze, które spełniają warunek.
+SELECT COUNT(*) FROM customers WHERE Country = 'USA'; - Policz, ilu klientów pochodzi z USA.
+
+COUNT(*) AS alias - Nadaje wynikowi COUNT czytelną nazwę (alias), np. do użycia w Pythonie.
+SELECT COUNT(*) AS liczba_klientow FROM customers; - Wynik zapytania zostanie nazwany liczba_klientow (czytelniejsze nagłówki w wyniku).
+
+COUNT(*) + JOIN - Zlicza dane, które są w kilku tabelach
+Ogólna składnia						Przykład
+SELECT (tabela1.kolumna z tabeli 1), COUNT(*)		SELECT customers.Country, COUNT(*)
+FROM (tabela 2)						FROM invoices
+JOIN (tabela 2) ON (warunek połączenia)			JOIN customers ON invoices.CustomerId = customers.CustomerId
+GROUP BY (tabela1.kolumna z tabeli 1)			GROUP BY customers.Country;
+
+--- AVG --- - oblicza srednia
+SELECT AVG(kolumna_liczbowa)	
+FROM tabela
+[WHERE warunek]			- oblicza srednia z jakims warunkiem
+[GROUP BY kolumna]		- oblicza srednia w grupach, np. GROUP BY Country - dla kazdego kraju
+
+--- MAX --- - zwraca maksymalna wartosc
+SELECT MAX(kolumna_liczbowa)
+FROM tabela
+[WHERE warunek]
+[GROUP BY kolumna]
+
+--- JOIN ---
+SELECT tabela.kolumna, tabela.kolumna      // albo inaczej, np. SELECT tabela.kolumna, COUNT(tabela.kolumna) 
+FROM glowna_tabela
+JOIN drugorzedna_tabela 
+ON glowna_tabela.kolumna = drugorzedna_tabela.kolumna (warunek)
+ew. gdy chce wiecej tabel to:
+JOIN kolejna_tabela ON kolejny_warunek itd.
+
+--- SUM --- - tak samo jak reszta funkcji
+np. SELECT SUM(Milliseconds) FROM tracks
+
+
+---------------------------- MODYFIKACJA TABEL ----------------------------
+ 
+INSERT INTO nazwa_tabeli (kolumna1, kolumna2, ...)
+VALUES (wartosc1, wartosc2, ...);
+
+UPDATE nazwa_tabeli
+SET kolumna_do_zmiany = nowa_wartosc
+WHERE warunek_identyfikujący_wiersz;
+
+DELETE FROM nazwa_tabeli
+WHERE identyfikator = konkretna_wartosc;
+
+
+---------------------------- KOLEJNOŚĆ ---------------------------- 
+SELECT kolumny_lub_funkcje_agregujące*
+FROM tabela
+[JOIN inna_tabela ON warunek]
+[WHERE warunek]
+[GROUP BY kolumna]			<--------- tylko do f. agregujących!
+[HAVING warunek]
+[ORDER BY kolumna ASC|DESC]
+[LIMIT liczba]
+
+* funkcje agregujące: COUNT, SUM, AVG, MAX, MIN
+
+---------------------------- RÓŻNE NOTATKI ---------------------------- 
+1. Przy funkcjach agregujących zawsze musi być SELECT, nawet gdy nie jest to intuicyjne, np.
+NIE: SUM(Total) ...
+TYLKO: SELECT SUM(Total) ...
+
+2. Funkcje agregujące jak MAX() działają na liczbach, ale nie zwracają powiązanych kolumn (np. tytułu utworu)!!!
+
+------------- Gdy chcę użyć funkcji agregujących i jednocześnie wyświetlić konkretny wiersz (np. nazwę), a grupuję po czymś innym (np. gatunku) -------------
+
+Krok 1. Najpierw licze wartość agregującą w grupach
+SELECT <kolumna, po ktorej bede grupowac>, 
+FUNKCJA_AGREGUJACA(to co licze) AS nazwa
+FROM tabela
+GROUP BY kolumna z selecta
+
+Krok 2. Pisze glowna tabele, czyli co chce wyswietlac i dolaczam to co w pkt 1 w podzapytaniu z JOIN
+SELECT ... (to, co chce pokazac)
+FROM tabela glowna, czyli ta z ktorej pochodzi to co licze f. agregujaca
+ew. JOIN jesli w seletcie mam dane z 2 tabel
+wtedy: JOIN druga tabela ON tabela_glowna.<to po czym grupuje> = tabela_druga_ktora_chce_pokazac.<to po czym grupuje>
+
+JOIN (
+    -- zapytanie z kroku 1
+) AS alias ON warunek_połączenia
+AND alias.nazwa = glowna_tabela.<to co licze>
+
+alias to jest jakby nowa tabela ktora musze polaczyc z pierwsza
+warunek polaczenia to jest alias.<kolumna po ktorej grupuje> = glowna_tabela.<kolumna po ktorej grupuje>
+
