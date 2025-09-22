@@ -63,5 +63,5 @@ myvar6 = pd.DataFrame(data)
 
 print(myvar6)
 
-# Series - pojedyncza kolumna
-# Data frame - tabela wielowymiarowa (wiele wierszy i kolumn)
+# Series - pojedyncza kolumna (1D)
+# Data frame - tabela 2D (wiele wierszy i kolumn)
