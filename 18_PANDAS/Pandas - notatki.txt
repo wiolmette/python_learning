@@ -1,0 +1,16 @@
+Najważniejsze komendy: 
+
+pd.Series(a)
+w nawiasie np. lista a (mozna tez tworzyc Series ze slownikow, wtedy nazwy indeksow = nazwy kluczy)
+
+pd.DataFrame(b)
+w nawiasie np. słownik b
+
+b[0] - odwolywanie sie do konkretnych pozycji za pomocą ich indeksów
+
+pd.Series(a, index = ["x", "y") - przypisanie nazw indeksom (automatycznie jest 0, 1, ...)
+
+b["x"] - odwolywanie sie do konkretnych pozycji  za pomocą ich nazw
+
+pd.Series(a, index = "x") - odwolywanie sie tylko do niektorych indeksow i wartosci
+
