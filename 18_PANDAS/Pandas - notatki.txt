@@ -1,10 +1,10 @@
 Najważniejsze komendy: 
 
+1) SERIES
+
 pd.Series(a)
 w nawiasie np. lista a (mozna tez tworzyc Series ze slownikow, wtedy nazwy indeksow = nazwy kluczy)
-
-pd.DataFrame(b)
-w nawiasie np. słownik b
+Series - tabela jednowymiarowa, czyli 1 kolumna (+ indeksy)
 
 b[0] - odwolywanie sie do konkretnych pozycji za pomocą ich indeksów
 
@@ -13,4 +13,49 @@ pd.Series(a, index = ["x", "y") - przypisanie nazw indeksom (automatycznie jest 
 b["x"] - odwolywanie sie do konkretnych pozycji  za pomocą ich nazw
 
 pd.Series(a, index = "x") - odwolywanie sie tylko do niektorych indeksow i wartosci
+
+
+2) DATA FRAMES
+
+pd.DataFrame(b)
+w nawiasie np. słownik b
+DataFrame - tabela 2D z wieloma kolumnami i wierszami
+
+df = pd.DataFrame(b)
+
+df.loc[1] - odwolywanie sie do specyficznego wiersza data frame'u (tutaj nr 1 czyli 2-gi)
+
+df.loc[0, 1] - odwolywanie sie do kilku wierszy data frame'u (od 0 do 1)
+
+pd.DataFrame(b, index = ["day1", "day2", "day3"]) - argument index pozwala nazywać indeksy
+
+df.loc["day1"] - mozna odwolywac sie do indeksow za pomoca ich nazw
+
+
+READ CSV
+
+df2 = pd.read_csv('data.csv') - read_csv' to komenda odczytywania csv, read_json do json'ow itp.
+
+df2.head(2)) - wyswietlanie naglowkow i pierwszych 2 wierszy DataFrame'u
+
+df2.head()) - wyswietlanie naglowkow i pierwszych 5 wierszy DataFrame'u
+
+print(df2.to_string()) - ".to_string" powoduje, ze wyswietla sie caly plik a nie tylko pierwsze i ostatnie 5 kolumn
+
+print(pd.options.display.max_rows)  - wyswietla maksymalna liczbe rzedow, czyli taka powyzej ktorej print 
+                                      bedzie wyswietlac 5 pierwszych i 5 ostatnich rzedow
+
+pd.options.display.max_rows = 9999  # zmiana maksymalnej liczby wierszy 
+
+df2.tail() -  wyswietlanie naglowkow i ostatnich 5 wierszy DataFrame'u
+
+df2.tail(x) -  wyswietlanie naglowkow i ostatnich x wierszy DataFrame'u
+
+df2.info - wyswietla wiecej informacji o zbiorze danych
+
+READ JSON
+
+JSONy maja taka sama strukture jak slowniki w Pythonie
+
+Mozna je wczytac jako plik, a mozna tez bezposrednio skopiowac zawartosc slownika 
 
