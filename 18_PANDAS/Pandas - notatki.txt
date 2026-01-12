@@ -8,7 +8,7 @@ Series - tabela jednowymiarowa, czyli 1 kolumna (+ indeksy)
 
 b[0] - odwolywanie sie do konkretnych pozycji za pomocą ich indeksów
 
-pd.Series(a, index = ["x", "y") - przypisanie nazw indeksom (automatycznie jest 0, 1, ...)
+pd.Series(a, index = ["x", "y"] - przypisanie nazw indeksom (automatycznie jest 0, 1, ...)
 
 b["x"] - odwolywanie sie do konkretnych pozycji  za pomocą ich nazw
 
@@ -25,7 +25,7 @@ df = pd.DataFrame(b)
 
 df.loc[1] - odwolywanie sie do specyficznego wiersza data frame'u (tutaj nr 1 czyli 2-gi)
 
-df.loc[0, 1] - odwolywanie sie do kilku wierszy data frame'u (od 0 do 1)
+df.loc[0, 1] - odwolywanie sie do wierszy od 0 do 1 
 
 pd.DataFrame(b, index = ["day1", "day2", "day3"]) - argument index pozwala nazywać indeksy
 
@@ -35,6 +35,8 @@ df.loc["day1"] - mozna odwolywac sie do indeksow za pomoca ich nazw
 READ CSV
 
 df2 = pd.read_csv('data.csv') - read_csv' to komenda odczytywania csv, read_json do json'ow itp.
+
+df2.columns = ["kolumna a", "kolumna b"] - zmiana nazw naglowkow, uwaga: liczba musi sie zgadzac z liczba kolumn
 
 df2.head(2)) - wyswietlanie naglowkow i pierwszych 2 wierszy DataFrame'u
 
@@ -60,5 +62,6 @@ JSONy maja taka sama strukture jak slowniki w Pythonie
 
 Mozna je wczytac jako plik, a mozna tez bezposrednio skopiowac zawartosc slownika 
 
+CLEANING DATA	
 
 

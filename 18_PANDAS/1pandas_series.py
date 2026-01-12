@@ -1,4 +1,4 @@
-import pandas as pd         # pandas jako alios pd aby latwiej sie do niego pozniej odwolywac
+import pandas as pd         # pandas jako alias pd aby latwiej sie do niego pozniej odwolywac
 
 # ---
 
