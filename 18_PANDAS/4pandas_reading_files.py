@@ -29,6 +29,8 @@ df3 = pd.read_json('data.json')
 print(df3)
 
 
-print(df2.tail())   # wyswietlanie naglowkow i ostatnich 5 wierszy DataFrame'u
+print(df2.tail())       # wyswietlanie naglowkow i ostatnich 5 wierszy DataFrame'u
 
 print(df2.info())   
+
+print(df3.to_string())      # printuje caly plik (calego data frame'a)
