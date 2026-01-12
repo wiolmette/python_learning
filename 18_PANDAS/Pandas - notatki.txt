@@ -53,6 +53,7 @@ df2.tail(x) -  wyswietlanie naglowkow i ostatnich x wierszy DataFrame'u
 
 df2.info - wyswietla wiecej informacji o zbiorze danych
 
+
 READ JSON
 
 JSONy maja taka sama strukture jak slowniki w Pythonie
