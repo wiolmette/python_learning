@@ -1,16 +1,14 @@
 import pandas as pd
 
-df = pd.read_csv('data2.csv')
+df = pd.read_csv('data3.csv')
 
 print(df)
 
-# ---
+new_df = df.dropna()    # dropna - usuwa puste wiersze, nie zmienia starej tabeli tylko tworzy nowa
+print(new_df)
 
-# pip install lxml html5lib beautifulsoup4 - najpierw instalacja lxml, czyli parsera HTML
-# parser HTML to program (biblioteka), który czyta kod HTML i zamienia go w strukturę, 
-# z którą Python może sensownie pracować
+# df.dropna(inplace = True)     # inplace = True zmienia stara tabele
+# print(df)                     # nie wlaczam tego bo nie chce zmieniac starej tabeli
 
-url = "https://www.w3schools.com/python/pandas/pandas_cleaning.asp"
-tables = pd.read_html(url)
-df2 = tables[0]
-print(df2)
+
+
