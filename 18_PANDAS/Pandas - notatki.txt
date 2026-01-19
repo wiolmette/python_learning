@@ -62,6 +62,8 @@ JSONy maja taka sama strukture jak slowniki w Pythonie
 
 Mozna je wczytac jako plik, a mozna tez bezposrednio skopiowac zawartosc slownika 
 
+
 CLEANING DATA	
 
-
+new_df = df.dropna()   		usuwa puste wiersze, nie zmienia starej tabeli tylko tworzy nowa
+df.dropna(inplace = True)     	zmienia stara tabele
