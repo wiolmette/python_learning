@@ -29,7 +29,8 @@ print(df)
 
 print(df.corr())
 
-# teoretycznie powinno byc: "Duration" and "Calories" got a 0.922721 correlation, 
+# teoretycznie powinno byc: "
+# Duration" and "Calories" got a 0.922721 correlation, 
 # which is a very good correlation, and we can predict that the longer you work out, 
 # the more calories you burn, 
 # and the other way around: if you burned a lot of calories, you probably had a long work out.

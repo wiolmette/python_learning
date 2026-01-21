@@ -97,3 +97,5 @@ df.drop_duplicates(inplace = True)   	usuwa wiersze bedace duplikatami
 
 
 CORRELATIONS
+
+df.corr()	pokazuje korelacje między wszystkimi parami obserwacji w kolumnach
