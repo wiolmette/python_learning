@@ -63,7 +63,37 @@ JSONy maja taka sama strukture jak slowniki w Pythonie
 Mozna je wczytac jako plik, a mozna tez bezposrednio skopiowac zawartosc slownika 
 
 
-CLEANING DATA	
+CLEANING & CORRECTING DATA	
 
 new_df = df.dropna()   		usuwa puste wiersze, nie zmienia starej tabeli tylko tworzy nowa
 df.dropna(inplace = True)     	zmienia stara tabele
+
+df.dropna(subset=['Nazwa_kolumny'])  	 usuwa puste komorki w zadanej kolumnie 
+
+df.fillna(WARTOŚĆ) 		zamienia puste komórki na zadaną wartość (też można dodać po przecinku inplace = True)
+
+df.fillna({"Nazwa_kolumny": WARTOŚĆ})	zamienia puste komórki we wskazanej kolumnie na zadaną wartość
+
+x = df["Nazwa_kolumny"].mean()  		- x staje sie srednia wartoscia z kolumny 
+
+new_df = df.fillna({"Nazwa_kolumny": x})	- zamienia puste komórki na średnią wartość z kolumny
+
+y = df["Nazwa_kolumny"].median()  		- mediana
+
+z = df["Nazwa_kolumny"].mode()			- wartosc ktora jest wyswietlana najczesciej 
+
+
+KONTYNUACJA
+
+print(df.columns.tolist())	wyswietla naglowki kolumn
+
+df['Date'] = pd.to_datetime(df['Date'], format='mixed')   	zmienia date w kolumnie Date na odpowiedni format
+
+df.loc[x, 'Nazwa_kolumny'] = y        # zamienia x-y wiersz zadanej kolumny na wartość y
+
+print(df.duplicated())  	 wypisuje wiersze z info czy jest duplikatem
+
+df.drop_duplicates(inplace = True)   	usuwa wiersze bedace duplikatami
+
+
+CORRELATIONS
