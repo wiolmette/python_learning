@@ -65,3 +65,19 @@ print(ludzie3)
 
 # 13. Dodaj do DataFrame duplikujące się wiersze.
 # Sprawdź: mile jest duplikatów, usuń je, porównaj liczbę wierszy przed i po
+
+ludzie3.loc[4] = ["Ola", "Dzik", 20, pd.Timestamp("2001-07-12")]    # dodawanie nowego wiersza + data!!!
+
+print(ludzie3)
+
+print(ludzie3.duplicated())
+
+print(len(ludzie3))
+
+ludzie4 = ludzie3.drop_duplicates()
+
+print(ludzie4)
+
+print(len(ludzie4))
+
+print("porownanie wierszy przed i po:", len(ludzie3), "/", len(ludzie4))
