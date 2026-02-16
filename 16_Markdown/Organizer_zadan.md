@@ -39,7 +39,7 @@ sie zaladowac (tekst alternatywny)
 > ciagle pierdzi - Pierdziucjusz
 
 ---
-
+<br><br>    dodatkowa linia (enter)
 ***
 
 
