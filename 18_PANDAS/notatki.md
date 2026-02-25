@@ -345,21 +345,24 @@ df.corr()
 
 Junior powinien:
 
-- wiedzieć, że domyślnie to korelacja Pearsona  
+- wiedzieć, że domyślnie to korelacja Pearsona  (liczy tylko zaleznosc liniowa, w skali od -1 do 1!)
 - umieć wskazać najsilniejszą korelację  
 - nie interpretować korelacji jako przyczynowości  
 
 ---
 
 ## 1️⃣4️⃣ Grupowanie (bardzo często wymagane)
-
+**df.groupby**("***NAZWA_KOLUMNY**_wg_ktorej_grupuje*")["***NAZWA_KOLUMNY**_do_analizy*"].***CO_LICZYC*** 
 ```python
 df.groupby("miasto")["wiek"].mean()
+# grupuje wg kolumny miasto czyli najpierw rozdzielam wiersze na rozne miasta, patrze na wiek w tych miastach i licze w nich sredni wiek
 
 df.groupby("miasto").agg({
     "wiek": "mean",
     "Calories": "sum"
 })
+# agg = agregacja (pozwala wykonac rozne operacje na roznych kolumnach jednoczesnie)
+# w kolumnie wiek liczy srednia, w Calories sume
 ```
 
 ---
@@ -367,24 +370,34 @@ df.groupby("miasto").agg({
 ## 1️⃣5️⃣ Wykresy
 
 ```python
+import matplotlib.pyplot as plt  # biblioteka do wykresów
+
 df.plot(kind="line")
 df.plot(kind="bar")
-df["wiek"].plot(kind="hist")
-df.plot(x="Duration", y="Calories", kind="scatter")
+df["wiek"].plot(kind="hist")  # wykres z 1 kolumny
+df.plot(x="Duration", y="Calories", kind="scatter") 
+# (scatter wymaga zdefiniowania x i y)
 ```
 
 Junior musi rozróżniać:
 
 - `bar` vs `hist`  
+*wykres slupkowy pokazuje wartosc dla kazdej kategorii*
+
+  *histogram pokazuje rozklad jednej zmiennej liczbowej*
 - `line` vs `scatter`  
+wykres liniowy - punkty polaczone linia, lepszy do przedstawiania trendu
+
+  wykres punktowy - do przedstawiania pojedynczych zaleznosci
 
 ---
 
 ## 1️⃣6️⃣ Indeks
 
-- indeks ≠ kolumna  
+- indeks ≠ kolumna, ale po grupowaniu kolumna po ktorej sie grupuje staje sie indeksem!
 - można go resetować  
 
 ```python
 df.reset_index(drop=True)
+# drop=True gdy nie chce zachowywac starego indeksu (np. miasta jesli grupowalam po miescie) jako kolumny
 ```
