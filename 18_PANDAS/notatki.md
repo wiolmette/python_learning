@@ -161,25 +161,24 @@ df[["wiek", "miasto"]]
 
 ---
 
-### 🔹 Wiersze
-
-#### `.loc` (po nazwach / warunkach)
+### 🔹 Wiersze i kolumny: różnica `loc` vs `iloc`.
 
 ```python
-df.loc[0]
+df.loc[wiersze, kolumny] - do nazw indeksow i kolumn (oraz warunkow logicznych!)
+np. df.loc["a"] - indeks "a"
+    df.loc[:, "wiek"] (: - wszystkie wiersze; kolumna "wiek")
+    df.loc["a", "wiek",] - konkretna komorka
+
+df.iloc[wiersze, kolumny] - do indeksow liczbowych!
+np. df.iloc[0] - 1szy wiersz
+    df.iloc[:, 0] - 1sza kolumna
+    df.iloc[0, 1] - konkretna komorka tabeli
+    df.iloc[0:5] - od pozycji 0 do 4 wlacznie!
+```
+.loc dziala to warunkow logicznych!!!
+```python
 df.loc[df["wiek"] > 30]
 ```
-
-#### `.iloc` (po indeksach liczbowych)
-
-```python
-df.iloc[0]
-df.iloc[0:5]
-```
-
-Bardzo częste pytanie rekrutacyjne: różnica `loc` vs `iloc`.
-
----
 
 ## 5️⃣ Filtrowanie (mega ważne)
 

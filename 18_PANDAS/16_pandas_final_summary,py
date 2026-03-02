@@ -1,0 +1,48 @@
+import pandas as pd
+
+# POWTORKA OD CHATA
+
+# I Teoria
+
+# 1️⃣ Czym rozni się Series od DataFrame?
+# Series to jednowymiarowa struktura danych (jak tabela jednokolumnowa + indeksy), natomiast data frame to wielowymiarowa tabela z danymi
+
+# 2️⃣ Co to jest indeks w Pandas?
+# Indeks jest przypisany każdemu wierszowi Series i Data Frame, sluzy do identyfikacji wierszy; domyslnie jest liczba calkowita, ale mozna go zmienic np na stringi
+
+# Czy indeks jest kolumną?
+# Nie
+
+# 3️⃣ Co robi:
+# df.reset_index(drop=True)
+# Usuwa stare indeksy (resetuje do domyslnego 0, 1, 2...); drop=True powoduje, ze stary nie jest zachowany jako kolumna (bez drop=True stary jest dodany jako kolumna!)
+
+# 4️⃣ Jaka jest różnica między:
+# .loc[] - odnoszneie sie do nazw indeksow
+# .iloc[] - odnoszenie sie do numerow indeksow
+
+# 5️⃣ Co zwróci:
+# df["wiek"].mean() - srednia z kolumny "wiek" data frame'u
+
+# Jaki będzie typ wyniku?
+# Float lub integer
+
+# 6️⃣ Co robi:
+# df.isna().sum()
+# Liczy ile jest brakow danych w kazdej kolumnie
+
+# 7️⃣ Co robi:
+# df["wiek"] = df["wiek"].astype(int)
+# Zmienia wartosci z kolumny "wiek" na liczby calkowite
+
+# 8️⃣ Jaka jest różnica między:
+# bar - wykres slupkowy pokazuje wartosc dla kazdej kategorii
+# hist - histogram pokazuje rozklad jednej zmiennej liczbowej
+
+# 9️⃣ Co robi:
+# df.sort_values("wiek", ascending=False) 
+# Sortuje wartosci kolumny "wiek" malejaco
+
+# 🔟 Co robi:
+# df.corr() 
+# Pokazuje korelacje liniowa miedzy parami kolumn (od -1 do 1)
