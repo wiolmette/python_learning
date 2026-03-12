@@ -69,6 +69,13 @@ pd.read_csv("plik.csv")
   df = pd.read_csv("plik.csv", encoding="utf-8")
   ```
 
+**Zapisywanie danych do csv:**
+
+przyklad:
+ ```python
+df2 = df.groupby("miasto")["zarobki"].mean()
+df2.to_csv("srednie_zarobki_miasto.csv") 
+ ```
 ---
 
 ### 🔹 JSON

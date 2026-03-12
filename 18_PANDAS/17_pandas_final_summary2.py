@@ -62,15 +62,42 @@ df.reset_index
 print(df)
 
 
-# PYTANIA NA MYSLENIE ANALITYCZNE
+# III PYTANIA NA MYSLENIE ANALITYCZNE
+
 # 1️⃣ Kiedy użyjesz groupby() zamiast filtrowania?
-# 
+# groupby uzyje kiedy chce przeanalizowac inna kolumne od tej,
+# wzgledem ktorej grupuje i wyciagnac z niej jakies dane
+# statystyczne
+# filtrowanie uzyje, gdy z jednej kolumny chce znalezc
+# wiersze, ktore spelaniaja jakis warunek
  
 # 2️⃣ Kiedy histogram jest lepszy niż wykres słupkowy? 
-#
+# histogram jest lepszy, gdy chcemy zobaczyc jaki jest rozklad
+# jednej zmiennej liczbowej, np. ile osob zarabia 5 tys zl, ile 10 itd.,
+# a wykres slupkowy gdy mamy rozne zmienne i sprawdzay np.
+# ile osob pali weglem drzewnym, a ile uzywa pomp ciepla
 
 # 3️⃣ Dlaczego po groupby() kolumna po której grupujesz staje się indeksem? 
-#
+# Wiem, ze sie tak dzieje - czy to wazne dlaczego?
+# Po groupby powstaje nowa tabela agregacji. Ta tabela ma:
+# - jedną wartość dla każdej grupy
+# - więc kolumna grupująca staje się naturalnym identyfikatorem wiersza,
+# czyli indeksem.
 
 # 4️⃣ Co się stanie jeśli zrobisz: df.groupby("miasto").mean() a masz w DataFrame kolumny tekstowe?
-#
+# Pandas pominie kolumny nienumeryczne, a dla reszty kolumn wypisze srednie (np. wiek, zarobki).
+
+# 🔹 BONUS – pytanie projektowe (typowe dla juniora). Masz plik CSV z 200 000 wierszy.
+# Masz policzyć średnie zarobki per miasto i zapisać wynik do nowego pliku. Opisz:
+
+# 1. Jak wczytasz dane?
+# df = pd.read_csv("plik.csv")
+
+# 2. Jak sprawdzisz czy nie ma braków?
+# df.isna().sum()
+
+# 3. Jak policzysz średnie zarobki per miasto?
+# df2 = df.groupby("miasto")["zarobki"].mean()
+
+# 4. Jak zapiszesz wynik?
+# df2.to_csv("srednie_zarobki_miasto.csv") 
