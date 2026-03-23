@@ -42,7 +42,7 @@ df = pd.DataFrame({
 ### 🔹 CSV
 
 ```python
-pd.read_csv("plik.csv")
+pd.read_csv("sciezka/plik.csv")
 ```
 
 **Ważne parametry:**
