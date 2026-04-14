@@ -89,8 +89,9 @@ pd.read_json("plik.json")
 ## 3️⃣ Szybkie poznanie danych (must-have)
 
 ```python
-df.head(WARTOŚĆ)
-df.tail(WARTOŚĆ)
+df.head(WARTOSC)
+df.tail(WARTOSC)
+df.sample(WARTOSC)
 df.shape
 len(df)
 df.columns
@@ -102,7 +103,8 @@ df.describe()
 ### 🔹 Co zwracają?
 
 - `df.head()` – nagłówki + 5 pierwszych wierszy  
-- `df.head(10)` – nagłówki + 10 pierwszych wierszy  
+- `df.head(10)` – nagłówki + 10 pierwszych wierszy 
+- `df.sample(3)` - 3 przykladowe, losowe wiersze
 - `df.tail()` – 5 ostatnich wierszy  
 - `df.shape` – `(liczba_wierszy, liczba_kolumn)`  
 - `len(df)` – liczba wierszy (jak `df.shape[0]`)  
@@ -310,6 +312,7 @@ obcinanie wartosci powyzej 120
 
 ```python
 df.duplicated()         # pokazuje zduplikowane wiersze
+df.duplicated().sum()   # liczba duplikatow
 df.drop_duplicates()    # usuwa duplikaty
 ```
 
@@ -407,3 +410,40 @@ wykres liniowy - punkty polaczone linia, lepszy do przedstawiania trendu
 df.reset_index(drop=True)
 # drop=True gdy nie chce zachowywac starego indeksu (np. miasta jesli grupowalam po miescie) jako kolumny
 ```
+
+---
+
+## 1️⃣7️⃣ **ANALIZA DANYCH (PROJEKT)**
+
+**1. Jakie informacje zawiera "jakość danych":**
+
+a) **Braki danych** (`df.isna().sum()` - liczba braków w poszczególnych kolumnach)
+- czy są braki danych
+- w których kolumnach
+- jaki to ma sens biznesowy
+
+np. 
+- *braki w kolumnie z datą dostawy → może zamówienie jeszcze nie doszło* 
+- *braki w order id* → problem krytyczny
+
+b) **Duplikaty** 
+
+`df.duplicated().sum()` - liczba zduplikowanych CAŁYCH wierszy!
+
+gdy chcemy sprawdzić ILE jest duplikatow w KOLUMNIE (np. customer_id):
+
+`df["customer_id"].duplicated().sum()`
+
+lub
+
+`df["id"].nunique()` + `len(df)` - liczba unikalnych wartości w kolumnie "id", porównana z liczbą wierszy → jeśli obie wartości są takie same, to mamy unikalne wartości id; jeśli nie - oznacza to problem
+
+c) **Typy danych** - czy daty i liczby są liczbami (`df.info()`)
+
+d) **Klucze i relacje**
+- co jest kluczem głównym? → jeśli `df["id"].nunique() == len(df)`, to znaczy, że kolumna "id" jest kluczem głównym
+- jak tabele się łączą? → tutaj trzeba wydedukować, jaka jest relacja między tabelami, np. one-to-many (1:N);
+wówczas to co jest "1" jest tabelą nadrzędną,
+to co jest "N" - jest tabelą podrzędną
+
+e) **Sens danych**
