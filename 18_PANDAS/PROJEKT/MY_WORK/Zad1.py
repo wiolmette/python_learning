@@ -27,7 +27,7 @@ print(customers.isna().sum())         # liczba brakujacych wartosci
 print("\nduplicated:")
 print(customers.duplicated().sum())   # liczba duplikatow
 
-print("\nDANE CUSTOMERS:\nliczba kolumn = ",customers.shape[0],"\nliczba wierszy = ",customers.shape[1],"\ntypy danych: object, int64\nbrak brakujacych wartosci\nbrak duplikatow\nprzykladowe rekordy wyswietlone ponizej\n")
+print("\nDANE CUSTOMERS:\nliczba kolumn = ",customers.shape[1],"\nliczba wierszy = ",customers.shape[0],"\ntypy danych: object, int64\nbrak brakujacych wartosci\nbrak duplikatow\nprzykladowe rekordy wyswietlone ponizej\n")
 print(customers.sample(5))                               # przykladowe rekordy
 
 # orders:
@@ -40,7 +40,7 @@ print(orders.isna().sum())         # liczba brakujacych wartosci
 print("\nduplicated:")
 print(orders.duplicated().sum())   # liczba duplikatow
 
-print("\nDANE ORDERS:\nliczba kolumn = ",orders.shape[0],"\nliczba wierszy = ",orders.shape[1],"\ntypy danych: object, int64\nbrakujace wartosci: order_approved_at - 160, order_delivered_carrier_date - 1783, order_delivered_customer_date - 2965\nbrak duplikatow\nprzykladowe rekordy wyswietlone ponizej\n")
+print("\nDANE ORDERS:\nliczba kolumn = ",orders.shape[1],"\nliczba wierszy = ",orders.shape[0],"\ntypy danych: object, int64\nbrakujace wartosci: order_approved_at - 160, order_delivered_carrier_date - 1783, order_delivered_customer_date - 2965\nbrak duplikatow\nprzykladowe rekordy wyswietlone ponizej\n")
 
 print(orders.sample(5))    
 
@@ -62,8 +62,20 @@ print(orders.sample(5))
 
 # 5. Zapisz 5 pierwszych obserwacji o jakości danych.
 
-# I W tabeli customers nie ma brakujacych wartosci.
-# II W tabeli customers nie ma duplikatow.
-# III W tabeli orders 3 kolumny zawieraja brakujacych wartosci.
-# IV W tabeli orders nie ma duplikatow.
-# V 
+# I W tabeli customers nie występują brakujące wartości,
+# co sugeruje kompletny zbiór danych klientów.
+
+# II W tabeli customers nie ma duplikatów pełnych wierszy,
+# co oznacza, że nie występują identyczne powtórzenia całych rekordów.
+
+# III  W tabeli orders występują brakujące wartości w kolumnach:
+# order_approved_at (160), order_delivered_carrier_date (1783),
+# order_delivered_customer_date (2965),
+# co może wskazywać na nieukończone lub opóźnione procesy zamówień.
+
+# IV W tabeli orders nie ma duplikatów pełnych wierszy,
+# jednak wymaga to dalszej weryfikacji na poziomie kluczy (np. order_id).
+
+# V W tabeli customers typy danych są spójne,
+# natomiast w tabeli orders kolumny dat są zapisane jako typ object,
+# co będzie wymagało konwersji przed dalszą analizą.
